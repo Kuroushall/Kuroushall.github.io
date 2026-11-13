@@ -1,0 +1,183 @@
+/*
+  Minimal academic homepage.
+  To change the look, edit the variables in :root (colours, font).
+*/
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("fonts/eb-garamond-latin-wght-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("fonts/eb-garamond-latin-wght-italic.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400 800;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --bg: #fbfaf7;
+  --text: #1f1e1c;
+  --muted: #6e6b65;
+  --link: #1f4f8f;
+  --pill: #ece9e1;
+  --rule: #bdb9b0;
+  --font: "EB Garamond", Garamond, Georgia, "Times New Roman", serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #181817;
+    --text: #e6e3dc;
+    --muted: #9b978f;
+    --link: #9bbcf0;
+    --pill: #2b2a27;
+    --rule: #57544e;
+  }
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  max-width: 34em;
+  margin: 0 auto;
+  padding: 1.4em 1.25em 3em;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-variant-numeric: lining-nums;
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Menu */
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 0.12em 0.4em;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.05em 0.55em;
+  border-radius: 6px;
+  background: var(--pill);
+  text-decoration: none;
+}
+
+nav a[aria-current="page"] {
+  color: var(--text);
+}
+
+hr {
+  margin: 0.5em 0 1.8em;
+  border: 0;
+  border-top: 1px dashed var(--rule);
+}
+
+/* Text */
+
+h1 {
+  margin: 0 0 0.6em;
+  font-size: 1.7em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 1.6em 0 0.5em;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 0.9em;
+}
+
+main p {
+  text-align: justify;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 1.3em;
+}
+
+li {
+  margin: 0.25em 0;
+}
+
+li::marker {
+  color: var(--muted);
+}
+
+sub,
+sup {
+  line-height: 0;
+}
+
+/* Bar over a letter, as in T<span class="bar">T</span> */
+.bar {
+  display: inline-block;
+  line-height: 0.8;
+  border-top: 0.065em solid currentColor;
+}
+
+.muted,
+.date {
+  color: var(--muted);
+}
+
+/* Publications */
+
+.pubs {
+  padding-left: 1.6em;
+}
+
+.pubs li {
+  margin: 0 0 1.05em;
+  padding-left: 0.25em;
+}
+
+.pubs .title {
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1em 1em 2.5em;
+    font-size: 1.15rem;
+  }
+
+  main p {
+    text-align: left;
+  }
+}
